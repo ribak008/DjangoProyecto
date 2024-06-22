@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Artículos</title>
+</head>
+<body>
+    <h1>Artículos</h1>
+    <a href="{% url 'crear_articulo' %}">Agregar nuevo artículo</a>
+    <ul>
+        {% for articulo in articulos %}
+            <li>
+                <h2>{{ articulo.nombre }}</h2>
+                <p>{{ articulo.descripcion }}</p>
+                <p>{{ articulo.precio }}</p>
+                <img src="{{ articulo.imagen.url }}" alt="{{ articulo.nombre }}">
+            </li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
